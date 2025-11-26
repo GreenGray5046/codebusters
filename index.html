@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aristocrat Cipher Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Random Quote Cipher Challenge</h1>
+        
+        <div class="game-info">
+            <div class="cipher-box">
+                <h3>Encrypted Quote:</h3>
+                <div id="ciphertext" class="ciphertext">Loading random quote from WikiQuote...</div>
+                <div id="hint" class="hint"></div>
+                <div id="gameStatus" class="game-status"></div>
+            </div>
+            
+            <div class="players-box">
+                <h3>Players (<span id="playerCount">0</span>/8):</h3>
+                <div id="players-list" class="players-list"></div>
+                <button onclick="newGame()" class="new-game-btn">New Game</button>
+            </div>
+        </div>
+        
+        <div class="join-section">
+            <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+            <button onclick="joinGame()">Join Competition</button>
+        </div>
+        
+        <div id="gameSection" class="game-section hidden">
+            <h3>Your Decryption:</h3>
+            <textarea id="solution" placeholder="Type your decrypted quote here..."></textarea>
+            <button onclick="submitSolution()">Submit Solution</button>
+            <div id="result" class="result"></div>
+        </div>
+        
+        <div class="instructions">
+            <h4>How to Play:</h4>
+            <p>Decrypt the ciphertext using monoalphabetic substitution cipher rules.</p>
+            <p>Each letter is consistently replaced throughout the text. Look for common words and patterns!</p>
+            <p>First correct decryption wins! Quotes are sourced from WikiQuote.</p>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
